@@ -6,14 +6,14 @@ import {
 } from '../enhanced-literals';
 
 describe('enhanced-literals', () => {
-  test('createComputedProperty', () => {
+  it('createComputedProperty', () => {
     expect.assertions(1);
 
     const person = createComputedProperty();
     expect(person.fullName).toBe('Jane Smith');
   });
 
-  test('createComputedMethod', () => {
+  it('createComputedMethod', () => {
     expect.assertions(2);
 
     const person = createComputedMethod();
@@ -21,7 +21,7 @@ describe('enhanced-literals', () => {
     expect(person.fullName()).toBe('Jane Smith');
   });
 
-  test('propertyValueShorthandUsage', () => {
+  it('propertyValueShorthandUsage', () => {
     expect.assertions(4);
 
     const lib = propertyValueShorthandUsage();
@@ -33,10 +33,10 @@ describe('enhanced-literals', () => {
     expect(lib.multiply(2, 3)).toBe(6);
   });
 
-  test('methodDefinitionShorthandUsage', () => {
+  it('methodDefinitionShorthandUsage', () => {
     expect.assertions(4);
 
-    const lib = propertyValueShorthandUsage();
+    const lib = methodDefinitionShorthandUsage();
 
     expect(lib.sum).toBeInstanceOf(Function);
     expect(lib.sum(2, 3)).toBe(5);
