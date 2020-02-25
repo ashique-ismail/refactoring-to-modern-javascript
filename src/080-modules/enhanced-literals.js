@@ -1,32 +1,28 @@
-function createComputedProperty() {
+const createComputedProperty = () => {
   var f = 'full';
   var l = 'Name';
 
-  var person = {
+  return {
     first: 'Jane',
     last: 'Smith',
+    [f + l]: 'Jane Smith',
   };
-
-  person[f+l] = 'Jane Smith';
-  return person;
 }
 
-function createComputedMethod() {
+const createComputedMethod = () => {
   var f = 'full';
   var l = 'Name';
 
-  var person = {
+  return {
     first: 'Jane',
     last: 'Smith',
+    [f + l]() {
+      return this.first + ' ' + this.last;
+    },
   };
-
-  person[f+l] = function() {
-    return this.first + ' ' + this.last;
-  }
-  return person;
 }
 
-function propertyValueShorthandUsage() {
+const propertyValueShorthandUsage = () => {
   var sum = function(a, b) {
     return a + b;
   };
@@ -35,17 +31,17 @@ function propertyValueShorthandUsage() {
   };
 
   return {
-    sum: sum,
-    multiply: multiply,
+    sum,
+    multiply,
   };
 }
 
-function methodDefinitionShorthandUsage() {
+const methodDefinitionShorthandUsage = () => {
   return {
-    sum: function(a, b) {
+    sum(a, b) {
       return a + b;
     },
-    multiply: function(a, b) {
+    multiply(a, b) {
       return a * b;
     }
   }
