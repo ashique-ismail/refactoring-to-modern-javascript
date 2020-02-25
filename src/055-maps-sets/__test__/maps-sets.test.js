@@ -8,7 +8,7 @@ import {
 } from '../maps-sets';
 
 // TODO: Remove the skip and implement the following
-describe.skip('maps-sets', () => {
+describe('maps-sets', () => {
   describe('maps', () => {
     it('areaCodeToCity: should return a map of area code to city', () => {
       expect.assertions(4);
